@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="?attr/android:windowBackground">
+
+    <TextView
+        android:id="@+id/textViewAddEditTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/add_edit"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewProduct"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="52dp"
+        android:contentDescription="@string/temp_image_desc"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewAddEditTitle" />
+
+    <TextView
+        android:id="@+id/textViewProductNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/product_name"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextProductName"
+        app:layout_constraintStart_toStartOf="@+id/editTextProductName"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewProduct" />
+
+    <EditText
+        android:id="@+id/editTextProductName"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:inputType="text"
+        android:background="@drawable/edittext_box"
+        android:hint="@string/enter_product_name"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="?attr/colorOnBackground"
+        android:textColorHint="?attr/colorOnBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewProductNameLabel" />
+
+    <TextView
+        android:id="@+id/textViewDescriptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/description"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDescription"
+        app:layout_constraintStart_toStartOf="@+id/editTextDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextProductName" />
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edittext_box"
+        android:hint="@string/enter_description"
+        android:inputType="text"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="?attr/colorOnBackground"
+        android:textColorHint="?attr/colorOnBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewDescriptionLabel" />
+
+    <TextView
+        android:id="@+id/textViewQuantityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/quantity_placeholder"
+        android:textSize="16sp"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
+
+    <EditText
+        android:id="@+id/editTextQuantity"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittext_box"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="@string/number_placeholder"
+        android:textColor="?attr/colorOnBackground"
+        android:textColorHint="?attr/colorOnBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewQuantityLabel" />
+
+    <Button
+        android:id="@+id/buttonDecrement"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="?attr/colorSecondary"
+        android:text="@string/neg_sign"
+        android:textColor="?attr/colorOnSecondary"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/editTextQuantity"
+        app:layout_constraintTop_toBottomOf="@id/textViewQuantityLabel" />
+
+    <Button
+        android:id="@+id/buttonIncrement"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="?attr/colorSecondary"
+        android:text="@string/pos_sign"
+        android:textColor="?attr/colorOnSecondary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/editTextQuantity"
+        app:layout_constraintTop_toBottomOf="@id/textViewQuantityLabel" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/add"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/buttonSave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextQuantity"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/save"
+        android:backgroundTint="?attr/colorSecondary"
+        android:textColor="?attr/colorOnSecondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonAdd"
+        app:layout_constraintTop_toBottomOf="@id/editTextQuantity"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/back_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_chevron_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorSecondary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
